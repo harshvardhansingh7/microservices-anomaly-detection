@@ -1,0 +1,11 @@
+spring:
+  redis:
+    host: ${REDIS_HOST:redis}
+    port: 6379
+
+server:
+  port: 8081
+
+logging:
+  level:
+    com.watchtower: INFO
