@@ -16,6 +16,8 @@ spring:
   jackson:
     serialization:
       write-dates-as-timestamps: false
+  application:
+    name: log-consumer
 
 ai:
   service:
@@ -28,4 +30,8 @@ logging:
   level:
     org.apache.kafka: WARN
     org.springframework.kafka: DEBUG
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
 

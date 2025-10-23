@@ -8,13 +8,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="log-consumer" />
         <module name="log-producer" />
+        <module name="api-gateway" />
         <module name="anomaly-api" />
+        <module name="eureka-server" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="anomaly-api" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
       <module name="log-consumer" options="-parameters" />
       <module name="log-producer" options="-parameters" />
     </option>

@@ -58,8 +58,10 @@ services:
       - "5000:5000"
     depends_on:
       - redis
+      - eureka-server
     environment:
       - PYTHONUNBUFFERED=1
+      - EUREKA_SERVER=http://eureka-server:8761/eureka/
 
   log-producer:
     build:
@@ -100,6 +102,30 @@ services:
       - redis
     environment:
       - REDIS_HOST=redis
+  eureka-server:
+    build:
+      context: ./eureka-server
+      dockerfile: Dockerfile
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    container_name: api-gateway
+    ports:
+      - "8085:8085"
+    depends_on:
+      - eureka-server
+      - log-producer
+      - log-consumer
+      - anomaly-api
+      - ai-service
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+
 
 volumes:
   redis_data:

@@ -4,6 +4,8 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  application:
+    name: log-producer
 
 server:
   port: 8080
@@ -11,3 +13,8 @@ server:
 logging:
   level:
     com.watchtower: INFO
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/

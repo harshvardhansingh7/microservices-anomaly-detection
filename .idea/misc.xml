@@ -10,7 +10,15 @@
         <option value="$PROJECT_DIR$/anomaly-api/pom.xml" />
         <option value="$PROJECT_DIR$/log-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/log-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/../eureka-server/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../eureka-server/eureka-server/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
